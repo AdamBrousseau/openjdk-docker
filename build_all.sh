@@ -92,7 +92,7 @@ do
 			echo "                                                                               "
 			echo "==============================================================================="
 			cat push_commands.sh
-			./push_commands.sh
+			# ./push_commands.sh
 
 			# Remove any temporary files
 			rm -f hotspot_*_latest.sh openj9_*_latest.sh push_commands.sh
