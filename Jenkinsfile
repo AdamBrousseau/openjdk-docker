@@ -17,7 +17,8 @@ timestamps {
             def arch = _arch
             builds[arch] = {
                 stage("Linux ${arch}") {
-                    node("${baseLabel}&&${archLabelTemplate}${arch}") {
+                    archLabel = (arch == "x64") ? "x86" : arch
+                    node("${baseLabel}&&${archLabelTemplate}${archLabel}") {
                         try {
                             dockerBuild(null)
                         } finally {
